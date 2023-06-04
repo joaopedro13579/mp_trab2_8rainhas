@@ -130,7 +130,8 @@ int main()
     {
         for (int j=0;j<8;j++)
         {
-            if (board[j][i]==1){
+            if (board[j][i]==1)
+            {
                 Leste(board,j-1,i);
                 Oeste(board,j+1,i);
                 cout<<"||"<<endl;
@@ -141,7 +142,8 @@ int main()
     {
         for (int j=0;j<8;j++)
         {
-            if (board[j][i]==1){
+            if (board[j][i]==1)
+            {
                 Norte(board,j,i-1);
                 Sul(board,j,i+1);
                 cout<<"||"<<endl;
@@ -152,7 +154,8 @@ int main()
     {
         for (int j=0;j<8;j++)
         {
-            if (board[j][i]==1){
+            if (board[j][i]==1)
+            {
                 Norte_Leste(board,j,i-1);
                 Sul-Leste(board,j,i+1);
                 cout<<"||"<<endl;
@@ -163,7 +166,8 @@ int main()
     {
         for (int j=0;j<8;j++)
         {
-            if (board[j][i]==1){
+            if (board[j][i]==1)
+            {
                 Norte_Oeste(board,j,i-1);
                 Sul-Oeste(board,j,i+1);
                 cout<<"||"<<endl;
