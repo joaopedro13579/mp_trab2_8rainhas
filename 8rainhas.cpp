@@ -137,7 +137,7 @@ int main()
             }
         }
     }
-                for (int i=0;i<8;i++)
+    for (int i=0;i<8;i++)
     {
         for (int j=0;j<8;j++)
         {
@@ -148,7 +148,28 @@ int main()
             }
         }
     }
-    
+    for (int i=0;i<8;i++)
+    {
+        for (int j=0;j<8;j++)
+        {
+            if (board[j][i]==1){
+                Norte_Leste(board,j,i-1);
+                Sul-Leste(board,j,i+1);
+                cout<<"||"<<endl;
+            }
+        }
+    }
+    for (int i=0;i<8;i++)
+    {
+        for (int j=0;j<8;j++)
+        {
+            if (board[j][i]==1){
+                Norte_Oeste(board,j,i-1);
+                Sul-Oeste(board,j,i+1);
+                cout<<"||"<<endl;
+            }
+        }
+    }
     
     
     return 0;
