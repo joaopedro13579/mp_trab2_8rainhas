@@ -2,16 +2,18 @@
 #include <iostream>
 using namespace std;
 #include <string> 
-int Sul(int board[8][8], int linhas ,int colunas)
+int Norte_Leste(int board[8][8], int linhas ,int colunas)
 {
-    for (;colunas<8;colunas++){
-        if (board[linhas][colunas]==1)
-        {
-            cout<<board[linhas][colunas];
-            // return (1);
-        }
-        cout<<board[linhas][colunas]<<" ";
-        // return(0);
+    for (;linhas>=0;linhas--)
+    {
+        colunas=colunas+1;
+        // if (board[linhas][colunas]==1)
+        // {
+            cout<<board[linhas][colunas]<<" ";
+                // return (1);
+        // }
+        //     cout<<0;
+            // return(0);            
     }
 }
 int main()
@@ -22,15 +24,15 @@ int main()
     {
         for (int j=0;j<8;j++)
         {
-            // board[i][j]=n;
-            // n=n+1;
-            if(j==i)
-            {
-                board[j][i]=1;
-            }else
-            {
-                board[j][i]=0;
-            }
+            board[i][j]=n;
+            n=n+1;
+            // if(j==i)
+            // {
+            //     board[j][i]=1;
+            // }else
+            // {
+            //     board[j][i]=0;
+            // }
         }
     }
         for (int i=0;i<8;i++)
@@ -47,7 +49,7 @@ int main()
     {
         for (int j=0;j<8;j++)
         {
-            Sul(board,j,i+1);
+            Norte_Leste(board,j,i+1);
             cout<<"||"<<endl;
             // if (board[j][i]==1){
             //     // Oeste(board,j+1,i);
