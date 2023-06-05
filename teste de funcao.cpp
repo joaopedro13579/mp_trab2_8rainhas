@@ -4,9 +4,9 @@ using namespace std;
 #include <string> 
 int Norte_Leste(int board[8][8], int linhas ,int colunas)
 {
-    for (;linhas>=0;linhas--)
+    for (;linhas>0;linhas--)
     {
-        colunas=colunas+1;
+        colunas=colunas-1;
         // if (board[linhas][colunas]==1)
         // {
             cout<<board[linhas][colunas]<<" ";
@@ -49,7 +49,7 @@ int main()
     {
         for (int j=0;j<8;j++)
         {
-            Norte_Leste(board,j,i+1);
+            Norte_Leste(board,j,i);
             cout<<"||"<<endl;
             // if (board[j][i]==1){
             //     // Oeste(board,j+1,i);

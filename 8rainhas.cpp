@@ -51,17 +51,16 @@ int Sul(int board[8][8], int linhas ,int colunas)
 }
 int Norte_Leste(int board[8][8], int linhas ,int colunas)
 {
-    for (;linhas<8;linhas++){
-        for (;colunas<8;colunas++){
-            if (board[linhas][colunas]==1)
-            {
-                cout<<board[linhas][colunas];
-                // return (1);
-            }
-            cout<<0;
-            // return(0);            
+    for (;linhas>0;linhas--)
+    {
+        colunas=colunas-1;
+        if (board[linhas][colunas]==1)
+        {
+            cout<<board[linhas][colunas]<<" ";
+            return (board[linhas][colunas]);
         }
-
+            cout<<0;
+            return(0);            
     }
 }
 int Norte_Oeste(int board[8][8], int linhas ,int colunas)
