@@ -7,7 +7,7 @@ int Oeste(int board[8][8], int linhas ,int colunas)
         if (board[linhas][colunas]==1)
         {
             cout<<board[linhas][colunas];
-            // return (1);
+            // return (board[linhas][colunas]);
         }
         cout<<0;
         // return(0);
@@ -157,7 +157,7 @@ int main()
             if (board[j][i]==1)
             {
                 Norte_Leste(board,j,i-1);
-                Sul-Leste(board,j,i+1);
+                Sul_Leste(board,j,i+1);
                 cout<<"||"<<endl;
             }
         }
@@ -169,7 +169,7 @@ int main()
             if (board[j][i]==1)
             {
                 Norte_Oeste(board,j,i-1);
-                Sul-Oeste(board,j,i+1);
+                Sul_Oeste(board,j,i+1);
                 cout<<"||"<<endl;
             }
         }
