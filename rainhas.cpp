@@ -4,16 +4,16 @@
 
 using namespace std;
 
-struct Queen {
+struct rainha {
     int row;
     int col;
 };
 
-bool checkAttack(const Queen& q1, const Queen& q2) {
+bool checkAttack(const rainha& q1, const rainha& q2) {
     return (q1.row == q2.row) || (q1.col == q2.col) || (abs(q1.row - q2.row) == abs(q1.col - q2.col));
 }
 
-bool validateBoard(const vector<Queen>& queens) {
+bool validateBoard(const vector<rainha>& queens) {
     for (int i = 0; i < queens.size(); ++i) {
         for (int j = i + 1; j < queens.size(); ++j) {
             if (checkAttack(queens[i], queens[j])) {
@@ -25,18 +25,18 @@ bool validateBoard(const vector<Queen>& queens) {
 }
 
 int codigo(string teste) {
-    ifstream inputFile(teste);
-    if (!inputFile) {
+    ifstream file_entrada(teste);
+    if (!file_entrada) {
         cerr << "Não foi possível abrir o arquivo de entrada." << endl;
         return -1;
     }
 
-    vector<Queen> queens;
+    vector<rainha> queens;
     vector<string> board;
     string line;
     int row = 0;
 
-    while (getline(inputFile, line) && queens.size() < 8) {
+    while (getline(file_entrada, line) && queens.size() < 8) {
 
         if (line.size() != 9 ) {
             cerr << "O arquivo de entrada não possui um tabuleiro de 8x8." << endl;
@@ -56,26 +56,26 @@ int codigo(string teste) {
         ++row;
     }
 
-    inputFile.close();
+    file_entrada.close();
 
     if (queens.size() != 8) {
         cerr << "O arquivo de entrada não contém 8 rainhas." << endl;
         return -1;
     }
 
-    cout << "Tabuleiro original:" << endl;
+    //cout << "Tabuleiro original:" << endl;
     for (const auto& row : board) {
-        cout << row << endl;
+        //cout << row << endl;
     }
 
     if (validateBoard(queens)) {
-        cout << "As rainhas não se atacam." << endl;
+        //cout << "As rainhas não se atacam." << endl;
         return 1;
     } else {
-        cout << "As rainhas se atacam." << endl;
+        //cout << "As rainhas se atacam." << endl;
 
-        ofstream outputFile("ataques.txt");
-        if (!outputFile) {
+        ofstream file_entrada("ataques.txt");
+        if (!file_entrada) {
             cerr << "Não foi possível criar o arquivo de saída." << endl;
             return 0;
         }
@@ -83,14 +83,14 @@ int codigo(string teste) {
         for (int i = 0; i < queens.size(); ++i) {
             for (int j = i + 1; j < queens.size(); ++j) {
                 if (checkAttack(queens[i], queens[j])) {
-                    outputFile << queens[i].row << "," << queens[i].col;
-                    outputFile << " " << queens[j].row << "," << queens[j].col << endl;
-                    outputFile << endl;
+                    file_entrada << queens[i].row << "," << queens[i].col;
+                    file_entrada << " " << queens[j].row << "," << queens[j].col << endl;
+                    file_entrada << endl;
                 }
             }
         }
 
-        outputFile.close();
+        file_entrada.close();
         return 0;
     }
 }
