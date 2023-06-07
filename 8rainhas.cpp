@@ -11,14 +11,16 @@ string arrayToString(int arr[2])
     string result = str1 + "," + str2;
     return result;
 }
-void printer(int rainha_1[2],int rainha_2[2]){
+void printer(int j,int i,int rainha_2[2]){
     string x;
+    string j1=to_string(j);
+    string i1=to_string(i);
     if (rainha_2[0]==16)
     {
         
     }else
     {   
-        x=arrayToString(rainha_1);
+        x=i1+j1;
         x=x+" "+arrayToString(rainha_2);
        criador_de_texto(x); 
     }
@@ -158,7 +160,7 @@ int main()
 {
     int n=0;
     int board[8][8];
-    int h1;
+    int arr[2];
     //criador da matriz
     for (int i=0;i<8;i++)
     {
@@ -190,8 +192,10 @@ int main()
         {
             if (board[j][i]==1)
             {
-                Leste(board,j-1,i);
-                Oeste(board,j+1,i);
+                arr[2]=Leste(board,j-1,i);
+                printer(i,j,arr);
+                arr[2]=Oeste(board,j+1,i);
+                printer(i,j,arr);
             }
         }
     }
@@ -201,8 +205,10 @@ int main()
         {
             if (board[j][i]==1)
             {
-                Norte(board,j,i-1);
-                Sul(board,j,i+1);
+                arr[2]=Norte(board,j,i-1);
+                printer(i,j,arr);
+                arr[2]=Sul(board,j,i+1);
+                printer(i,j,arr);
             }
         }
     }
@@ -212,8 +218,10 @@ int main()
         {
             if (board[j][i]==1)
             {
-                Norte_Leste(board,j,i);
-                Sul_Leste(board,j,i);
+                arr[2]=Norte_Leste(board,j,i);
+                printer(i,j,arr);
+                arr[2]=Sul_Leste(board,j,i);
+                printer(i,j,arr);
             }
         }
     }
@@ -223,8 +231,10 @@ int main()
         {
             if (board[j][i]==1)
             {
-                Norte_Oeste(board,j,i);
-                Sul_Oeste(board,j,i);
+                arr[2]=Norte_Oeste(board,j,i);
+                printer(i,j,arr);
+                arr[2]=Sul_Oeste(board,j,i);
+                printer(i,j,arr);
             }
         }
     }
