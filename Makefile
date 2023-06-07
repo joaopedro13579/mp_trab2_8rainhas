@@ -29,10 +29,10 @@ cppcheck: testa_rainhas.cpp   rainhas.cpp rainhas.hpp
 valgrind: testa_rainhas
 	valgrind --leak-check=yes --log-file=valgrind.rpt testa_rainhas
 
-romanos.o : rainhas.cpp rainhas.hpp
+rainhas.o : rainhas.cpp rainhas.hpp
 	g++ -std=c++11 -Wall -Wall -c rainhas.cpp
 	
-testa_romanos: 	testa_rainhas.cpp   rainhas.cpp rainhas.hpp rainhas.o
+testa_rainhas: 	testa_rainhas.cpp   rainhas.cpp rainhas.hpp rainhas.o
 	g++ -std=c++11 -Wall rainhas.o testa_rainhas.cpp -o testa_rainhas
 
 clean:
