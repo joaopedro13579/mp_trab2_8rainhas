@@ -53,7 +53,7 @@ int codigo(string teste) {
             }
         }
 
-        ++row;
+        ++row
     }
 
     file_entrada.close();
