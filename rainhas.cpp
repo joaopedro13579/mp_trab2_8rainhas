@@ -4,15 +4,29 @@
 
 using namespace std;
 
+/**
+ * Struct representing a queen on the chessboard.
+ */
 struct rainha {
-    int row;
-    int col;
+    int row;/**< The row position of the queen. */
+    int col;/**< The column position of the queen. */
 };
-
+/**
+ * Checks if two queens can attack each other.
+ *
+ * @param q1 The first queen.
+ * @param q2 The second queen.
+ * @return True if the queens can attack each other, False otherwise.
+ */
 bool checkAttack(const rainha& q1, const rainha& q2) {
     return (q1.row == q2.row) || (q1.col == q2.col) || (abs(q1.row - q2.row) == abs(q1.col - q2.col));
 }
-
+/**
+ * Validates the chessboard configuration.
+ *
+ * @param queens The vector of queens.
+ * @return True if the queens do not attack each other, False otherwise.
+ */
 bool validateBoard(const vector<rainha>& queens) {
     for (int i = 0; i < queens.size(); ++i) {
         for (int j = i + 1; j < queens.size(); ++j) {
@@ -23,7 +37,12 @@ bool validateBoard(const vector<rainha>& queens) {
     }
     return true;
 }
-
+/**
+ * Reads a chessboard configuration from a file and checks if the queens attack each other.
+ *
+ * @param teste The name of the input file.
+ * @return 1 if the queens do not attack each other, 0 if they do, -1 if an error occurs.
+ */
 int codigo(string teste) {
     ifstream file_entrada(teste);
     if (!file_entrada) {
