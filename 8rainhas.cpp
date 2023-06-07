@@ -166,8 +166,7 @@ int main()
     {
         for (int j=0;j<8;j++)
         {
-            // board[i][j]=n;
-            // n=n+1;
+
             if(j==i)
             {
                 board[j][i]=1;
@@ -177,15 +176,7 @@ int main()
             }
         }
     }
-    //     for (int i=0;i<8;i++)
-    // {
-    //     for (int j=0;j<8;j++)
-    //     {
-    //         cout<<board[j][i]<<" ";
-            
-    //     }
-    //     cout<<endl;
-    // }
+    //end
     for (int i=0;i<8;i++)
     {
         for (int j=0;j<8;j++)
