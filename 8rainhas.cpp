@@ -19,7 +19,7 @@ void printer(int rainha_1[2],int rainha_2[2]){
     }else
     {   
         x=arrayToString(rainha_1);
-        x=x+arrayToString(rainha_2);
+        x=x+" "+arrayToString(rainha_2);
        criador_de_texto(x); 
     }
 }
