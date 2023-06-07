@@ -3,51 +3,45 @@ using namespace std;
 #include <string> 
 int Oeste(int board[8][8], int linhas ,int colunas)
 {
-    for (;linhas<8;linhas++){
+    for (;linhas<8;linhas++)
+    {
         if (board[linhas][colunas]==1)
         {
-            cout<<board[linhas][colunas];
-            // return (board[linhas][colunas]);
+            return (linhas,colunas);
         }
-        cout<<0;
-        // return(0);
     }
+    return(16);
 }
 int Leste(int board[8][8], int linhas ,int colunas)
 {
-    for (;linhas>=0;linhas--){
+    for (;linhas>=0;linhas--)
+    {
         if (board[linhas][colunas]==1)
         {
-            cout<<board[linhas][colunas];
-            // return (1);
+            return (linhas,colunas);
         }
-        cout<<1;
-        return(0);
     }
+    return(16);
 }
 int Norte(int board[8][8], int linhas ,int colunas)
 {
     for (;colunas>=0;colunas--){
         if (board[linhas][colunas]==1)
         {
-            cout<<board[linhas][colunas];
-            // return (1);
+            return (linhas,colunas);
         }
-        cout<<1;
-        // return(0);
     }
+    return(16);
 }
 int Sul(int board[8][8], int linhas ,int colunas)
 {
     for (;colunas<8;colunas++){
         if (board[linhas][colunas]==1)
         {
-            cout<<board[linhas][colunas];
-            // return (1);
+            return (linhas,colunas);
         }
-        cout<<0;
-        // return(0);
     }
+    return(16);
 }
 int Norte_Leste(int board[8][8], int linhas ,int colunas)
 {
@@ -56,26 +50,22 @@ int Norte_Leste(int board[8][8], int linhas ,int colunas)
         colunas=colunas-1;
         if (board[linhas][colunas]==1)
         {
-            cout<<board[linhas][colunas]<<" ";
-            return (board[linhas][colunas]);
+            return (linhas,colunas);
         }
-            cout<<0;
-            return(0);            
     }
+    return(16);
 }
 int Norte_Oeste(int board[8][8], int linhas ,int colunas)
 {
     for (;linhas<8;linhas++)
     {
         colunas=colunas-1;
-        // if (board[linhas][colunas]==1)
-        // {
-            cout<<board[linhas][colunas]<<" ";
-                // return (1);
-        // }
-        //     cout<<0;
-            // return(0);            
+        if (board[linhas][colunas]==1)
+        {
+            return (linhas,colunas);
+        }                        
     }
+    return (16);
 }
 int Sul_Oeste(int board[8][8], int linhas ,int colunas)
 {
@@ -84,12 +74,10 @@ int Sul_Oeste(int board[8][8], int linhas ,int colunas)
         colunas=colunas+1;
         if (board[linhas][colunas]==1)
         {
-            cout<<board[linhas][colunas]<<" ";
-            return (board[linhas][colunas]);
-        }
-            cout<<0;
-            return(0);            
+            return (linhas,colunas);
+        }          
     }
+    return(16);
 }
 int Sul_Leste(int board[8][8], int linhas ,int colunas)
 {
@@ -98,12 +86,10 @@ int Sul_Leste(int board[8][8], int linhas ,int colunas)
         colunas=colunas+1;
         if (board[linhas][colunas]==1)
         {
-            cout<<board[linhas][colunas]<<" ";
-            return (board[linhas][colunas]);
-        }
-            cout<<0;
-            return(0);            
+            return (linhas,colunas);
+        }       
     }
+    return(16);
 }
 
 int main()
