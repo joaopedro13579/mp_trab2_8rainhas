@@ -96,6 +96,7 @@ int main()
 {
     int n=0;
     int board[8][8];
+    //criador da matriz
     for (int i=0;i<8;i++)
     {
         for (int j=0;j<8;j++)
@@ -111,16 +112,16 @@ int main()
             }
         }
     }
-        for (int i=0;i<8;i++)
-    {
-        for (int j=0;j<8;j++)
-        {
-            cout<<board[j][i]<<" ";
+    //     for (int i=0;i<8;i++)
+    // {
+    //     for (int j=0;j<8;j++)
+    //     {
+    //         cout<<board[j][i]<<" ";
             
-        }
-        cout<<endl;
-    }
-            for (int i=0;i<8;i++)
+    //     }
+    //     cout<<endl;
+    // }
+    for (int i=0;i<8;i++)
     {
         for (int j=0;j<8;j++)
         {
@@ -128,7 +129,6 @@ int main()
             {
                 Leste(board,j-1,i);
                 Oeste(board,j+1,i);
-                cout<<"||"<<endl;
             }
         }
     }
@@ -140,7 +140,6 @@ int main()
             {
                 Norte(board,j,i-1);
                 Sul(board,j,i+1);
-                cout<<"||"<<endl;
             }
         }
     }
@@ -152,7 +151,6 @@ int main()
             {
                 Norte_Leste(board,j,i);
                 Sul_Leste(board,j,i);
-                cout<<"||"<<endl;
             }
         }
     }
@@ -164,7 +162,6 @@ int main()
             {
                 Norte_Oeste(board,j,i);
                 Sul_Oeste(board,j,i);
-                cout<<"||"<<endl;
             }
         }
     }
