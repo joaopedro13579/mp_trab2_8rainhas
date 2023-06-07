@@ -1,101 +1,164 @@
 #include <iostream>
 using namespace std;
 #include <string> 
+void criador_de_texto(string x){
+    
+}
+string arrayToString(int arr[2]) 
+{
+    string str1 = to_string(arr[0]);
+    string str2 = to_string(arr[1]);
+    string result = str1 + "," + str2;
+    return result;
+}
+void printer(int rainha_1[2],int rainha_2[2]){
+    string x;
+    if (rainha_2[0]==16)
+    {
+        
+    }else
+    {   
+        x=arrayToString(rainha_1);
+        x=x+arrayToString(rainha_2);
+       criador_de_texto(x); 
+    }
+}
 int Oeste(int board[8][8], int linhas ,int colunas)
 {
+    int arr[2];
     for (;linhas<8;linhas++)
     {
         if (board[linhas][colunas]==1)
         {
-            return (linhas,colunas);
+            arr[0]=linhas;
+            arr[1]=colunas;
+            return (arr[2]);
         }
     }
-    return(16);
+    arr[0]=16;
+    arr[1]=16;
+    return(arr[2]);
 }
 int Leste(int board[8][8], int linhas ,int colunas)
 {
+    int arr[2];
     for (;linhas>=0;linhas--)
     {
         if (board[linhas][colunas]==1)
         {
-            return (linhas,colunas);
+            arr[0]=linhas;
+            arr[1]=colunas;
+            return (arr[2]);
         }
     }
-    return(16);
+    arr[0]=16;
+    arr[1]=16;
+    return(arr[2]);
 }
 int Norte(int board[8][8], int linhas ,int colunas)
 {
+    int arr[2];
     for (;colunas>=0;colunas--){
         if (board[linhas][colunas]==1)
         {
-            return (linhas,colunas);
+            arr[0]=linhas;
+            arr[1]=colunas;
+            return (arr[2]);
         }
     }
-    return(16);
+    arr[0]=16;
+    arr[1]=16;
+    return(arr[2]);
 }
 int Sul(int board[8][8], int linhas ,int colunas)
 {
+    int arr[2];
     for (;colunas<8;colunas++){
         if (board[linhas][colunas]==1)
         {
-            return (linhas,colunas);
+            arr[0]=linhas;
+            arr[1]=colunas;
+            return (arr[2]);
         }
     }
-    return(16);
+    arr[0]=16;
+    arr[1]=16;
+    return(arr[2]);
 }
 int Norte_Leste(int board[8][8], int linhas ,int colunas)
 {
+    int arr[2];
     for (;linhas>0;linhas--)
     {
         colunas=colunas-1;
         if (board[linhas][colunas]==1)
         {
-            return (linhas,colunas);
+            arr[0]=linhas;
+            arr[1]=colunas;
+            return (arr[2]);
         }
     }
-    return(16);
+    arr[0]=16;
+    arr[1]=16;
+    return(arr[2]);
 }
 int Norte_Oeste(int board[8][8], int linhas ,int colunas)
 {
+    int arr[2];    
     for (;linhas<8;linhas++)
     {
         colunas=colunas-1;
         if (board[linhas][colunas]==1)
         {
-            return (linhas,colunas);
+            arr[0]=linhas;
+            arr[1]=colunas;
+            return (arr[2]);
         }                        
     }
-    return (16);
+    arr[0]=16;
+    arr[1]=16;
+    return(arr[2]);
 }
 int Sul_Oeste(int board[8][8], int linhas ,int colunas)
 {
+    int arr[2];
     for (;linhas<7;linhas++)
     {
         colunas=colunas+1;
         if (board[linhas][colunas]==1)
         {
-            return (linhas,colunas);
+            arr[0]=linhas;
+            arr[1]=colunas;
+            return (arr[2]);
         }          
     }
-    return(16);
+    arr[0]=16;
+    arr[1]=16;
+    return(arr[2]);
 }
 int Sul_Leste(int board[8][8], int linhas ,int colunas)
 {
+    int arr[2];
     for (;linhas>=0;linhas--)
     {
         colunas=colunas+1;
         if (board[linhas][colunas]==1)
         {
-            return (linhas,colunas);
+            arr[0]=linhas;
+            arr[1]=colunas;
+            return (arr[2]);
         }       
     }
-    return(16);
+    arr[0]=16;
+    arr[1]=16;
+    return(arr[2]);
 }
 
 int main()
 {
     int n=0;
     int board[8][8];
+    int h1;
     //criador da matriz
     for (int i=0;i<8;i++)
     {
