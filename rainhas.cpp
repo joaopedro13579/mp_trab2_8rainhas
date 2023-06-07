@@ -21,7 +21,7 @@ bool validateBoard(const vector<rainha>& queens) {
             }
         }
     }
-    return true
+    return true;
 }
 
 int codigo(string teste) {
